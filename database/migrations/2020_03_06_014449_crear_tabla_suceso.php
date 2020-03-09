@@ -19,6 +19,8 @@ class CrearTablaSuceso extends Migration
             $table->string('descrippcion', 250);
             $table->string('localizacion', 250);
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

@@ -21,6 +21,8 @@ class CrearTablaUsuarioPersona extends Migration
             $table->foreign('persona_id', 'fk_usuariopersona_persona')->references('id')->on('persona')->onDelete('restrict')->onUpdate('restrict');
             $table->string('pertenece', 10);
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

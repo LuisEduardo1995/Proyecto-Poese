@@ -19,6 +19,8 @@ class CrearTablaNoticia extends Migration
             $table->string('fecha', 40);
             $table->string('descripcion', 250);
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

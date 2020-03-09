@@ -22,6 +22,8 @@ class CrearTablaUsuarioSuceso extends Migration
             $table->date('fecha');
             $table->dateTimeTz('hora');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

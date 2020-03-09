@@ -14,12 +14,12 @@ class CrearTablaUsuarioNoticia extends Migration
     public function up()
     {
         Schema::create('usuario_noticia', function (Blueprint $table) {
-            $table->bigIncrements('id');
             $table->unsignedInteger('usuario_id');
             $table->foreign('usuario_id', 'fk_usuarionoticia_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedInteger('noticia_id');
             $table->foreign('noticia_id', 'fk_usuarionoticia_noticia')->references('id')->on('noticia')->onDelete('restrict')->onUpdate('restrict');
-            $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

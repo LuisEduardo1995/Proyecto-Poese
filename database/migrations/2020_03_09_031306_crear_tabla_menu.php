@@ -15,10 +15,11 @@ class CrearTablaMenu extends Migration
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre', 30);
-            $table->string('url', 50);
-            $table->string('orden', 30);
-            $table->string('icono');
+            $table->unsignedInteger('manu_id')->default(0);
+            $table->string('nombre', 50);
+            $table->string('url', 100);
+            $table->unsignedInteger('orden')->default(0);
+            $table->string('icono', 50)->nullable();
             $table->timestamps();
         });
     }
