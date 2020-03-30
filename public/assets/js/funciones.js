@@ -39,6 +39,3 @@ var poese = function () {
         },
     }
 }();
-
-1
-

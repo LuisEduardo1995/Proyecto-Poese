@@ -1,7 +1,7 @@
 @if (session("mensaje"))
 <div class="card card-success alert alert-dismissible">
     <div class="card-header">
-      <h3 class="card-title">El formulario de Menú</h3>
+      <h3 class="card-title">Mensaje sistema POESE</h3>
 
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>

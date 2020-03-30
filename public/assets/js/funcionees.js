@@ -33,7 +33,7 @@ var poese = function(){
                     
                 },
                 submitHandler: function (form) {
-
+                    return true;
                 }
             });
         }

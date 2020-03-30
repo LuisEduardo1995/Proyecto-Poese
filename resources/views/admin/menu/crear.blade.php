@@ -21,7 +21,7 @@
                   <h3 class="card-title">Registrar Menú</h3>
                 </div>
 
-                <form action="{{route('guardar_menu')}}" id="form-general" method="POST">
+                <form action="{{route('guardar_menu')}}" id="form-general" method="POST" autocomplete="off">
                     @csrf
                     <div class="card-body">
                       @include('admin.menu.form')
