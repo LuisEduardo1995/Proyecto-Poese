@@ -25,18 +25,17 @@
                             <tr>
                                 <th>Menú</th>
                                 @foreach ($rols as $id => $tipo_usuario)
-                                <th>{{$tipo_usuario}}</th>
-                                    
+                                <th class="text-center">{{$tipo_usuario}}</th>
                                 @endforeach
-                            </tr>
-                        </thead>
-                        <tbody>
+                                    </tr>
+                                 </thead>
+                                   <tbody>
 
-                            @foreach ($menus as $key => $menu)
-                        @if ($menu["menu_id"] != 0)
-                            @break
-                        @endif
-                            <tr>
+                                     @foreach ($menus as $key => $menu)
+                                    @if ($menu["menu_id"] != 0)
+                                    @break
+                                    @endif
+                                    <tr>
                                 <td class="font-weight-bold"><i class="fa fa-arrows-alt"></i> {{$menu["nombre"]}}</td>
                                 @foreach($rols as $id => $tipo_usuario)
                                     <td class="text-center">
@@ -93,10 +92,8 @@
                                         </tr>
                                     @endforeach
                                 @endforeach
+                              @endforeach
                             @endforeach
-                        @endforeach
-
-
                         </tbody>
                     </table>
                

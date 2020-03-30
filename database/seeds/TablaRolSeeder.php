@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class TablaRolSeeder extends Seeder
 {
@@ -14,12 +15,7 @@ class TablaRolSeeder extends Seeder
     {
         $rols = [
 
-            'administrador',
-            'apc',
-            'tutor',
-            'comisionado',
-            'responsable',
-            'encargado'
+           
         ];
         foreach($rols as $key => $value){
             DB::table('rol')->insert([

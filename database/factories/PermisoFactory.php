@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Permiso::class, function (Faker $faker) {
     return [
-        'responsabilidad' => $faker->word
+        'responsabilidad' => $faker->word,
     ];
 });

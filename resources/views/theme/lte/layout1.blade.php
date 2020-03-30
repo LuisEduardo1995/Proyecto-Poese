@@ -14,6 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/adminlte.min.css")}}">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
    <!-- estilos unicos de contenidos -->
    
    @yield("styles")
@@ -99,8 +100,12 @@
 <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
 <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
 <script src="{{asset("assets/js/funcionees.js")}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="{{asset("assets/js/scripts.js")}}"></script>
 
 @yield("scripts")
+
 
 </body>
 </html>

@@ -25,9 +25,9 @@ $(document).ready(function () {
             success: function (respuesta) {
                 if (respuesta.mensaje == "ok") {
                     form.parents('tr').remove();
-                    poese.notificaciones('El registro fue eliminado correctamente', 'poese', 'success');
+                    poese.notificaciones('El registro fue eliminado correctamente', 'POESE', 'success');
                 } else {
-                    poese.notificaciones('El registro no pudo ser eliminado, hay recursos usandolo', 'poese', 'error');
+                    poese.notificaciones('El registro no pudo ser eliminado, hay recursos usandolo', 'POESE', 'error');
                 }
             },
             error: function () {

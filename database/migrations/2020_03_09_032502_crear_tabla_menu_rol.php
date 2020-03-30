@@ -20,7 +20,6 @@ class CrearTablaMenuRol extends Migration
             $table->foreign('menu_id', 'fk_menurol_menu')->references('id')->on('menu')->onDelete('restrict')->onUpdate('restrict');
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_spanish_ci';
-            $table->timestamps();
         });
     }
 

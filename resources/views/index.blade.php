@@ -1,104 +1,14 @@
 @extends("theme.$theme.layout")
+@include('includes.mensaje')
 
 
 
 @section('contenido')
-
-
 <div class="row">
-    <div class="col-md-11">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Collapsible Accordion</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <div id="accordion">
-            <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h4 class="card-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    Collapsible Group Item #1
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                  laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                  nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                  labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card card-danger">
-              <div class="card-header">
-                <h4 class="card-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                    Collapsible Group Danger
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                  laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                  nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                  labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card card-success">
-              <div class="card-header">
-                <h4 class="card-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                    Collapsible Group Success
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                  laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                  nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                  labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-    </div>
-
-
-    <div class="col-md-6">
+      <div class="col-md-11">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Carousel</h3>
+            <h3 class="card-title"> Relaciones Politicas </h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -110,13 +20,13 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="https://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="https://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/2.png")}}" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="https://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/3.png")}}" alt="Third slide">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -129,17 +39,120 @@
               </a>
             </div>
           </div>
-          <!-- /.card-body -->
+        <div class="card-header">
+          <h3 class="card-title"> PENSAMIENTOS </h3>
         </div>
-        <!-- /.card -->
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div id="accordion">
+            <!-- we are adding the .class so bootstrap.js collapse plugin detects it -->
+               <div class="card card-primary">
+              <div class="card-header">
+                <h4 class="card-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    COMANDANTE ETERNO HUGO CHAVEZ
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <table><tr><td class="col-md-6"> <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                  3
+                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                  laborum
+                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                  nulla
+                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                  beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                  labore sustainable VHS.
+                </div></td>
+                <td class="col-md-6">
+                  <div>
+                    <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                  </div>
+                </td>
+              </tr>
+              </table>
+                    </div>
+                  </div>
+            <div class="card card-danger">
+              <div class="card-header">
+                <h4 class="card-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    PRESIDENTE NICOLAS MADURO
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <table><tr><td class="col-md-6"> <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                  3
+                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                  laborum
+                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                  nulla
+                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                  beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                  labore sustainable VHS.
+                </div></td>
+                <td class="col-md-6">
+                  <div>
+                    <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                  </div>
+                </td>
+              </tr>
+              </table>
+              </div>
+            </div>
+            <div class="card card-success">
+              <div class="card-header">
+                <h4 class="card-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    DENNYS GUEDEZ
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+               <table><tr><td class="col-md-6"> <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                  3
+                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                  laborum
+                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                  nulla
+                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                  beer
+                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                  labore sustainable VHS.
+                </div></td>
+                <td class="col-md-6">
+                  <div>
+                    <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                  </div>
+                </td>
+              </tr>
+              </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </table>
       </div>
+      <!-- /.card -->
+    </div>
 
       <div class="col-md-5">
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              <i class="fas fa-text-width"></i>
-              Unstyled List
+              <i class=""></i>
+              Objetivos de la Comision de Seguridad
             </h3>
           </div>
           <!-- /.card-header -->
@@ -166,17 +179,50 @@
         </div>
         <!-- /.card -->
       </div>
+      <div class="card col-md-6">
+        <div class="card-header">
+          <h3 class="card-title"> Miembros de la Comision de Seguridad </h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          <ul class="users-list clearfix">
+            <li>
+              <img src="{{asset("assets/imagenes/luis.jpg")}}" alt="User Image">
+              <a class="users-list-name"> Luis SantaFé </a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">Norman</a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">Jane</a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">John</a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">Alexander</a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">Sarah</a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">Nora</a>
+            </li>
+            <li>
+              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
+              <a class="users-list-name">Nadia</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <!-- ./col -->
     </div>
-    <!-- /.row -->
-
-
-      <!-- /.col -->
-    </div>
-
-    
-
-  
-
+ 
 
 @endsection

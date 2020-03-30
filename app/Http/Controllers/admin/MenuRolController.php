@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Menu;
-use App\Models\Admin\MenuRol;
 use App\Models\Admin\Rol;
 
 class MenuRolController extends Controller
@@ -45,5 +44,5 @@ class MenuRolController extends Controller
             abort(404);
         }
     }
-
+ 
 }

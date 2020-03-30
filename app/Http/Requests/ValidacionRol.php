@@ -24,7 +24,7 @@ class ValidacionRol extends FormRequest
     public function rules()
     {
         return [
-            'tipo_usuario' => 'required|max:50|unique:rol,tipo_usuario,' . $this->route('id'),
+            'tipo_usuario' => 'required|max:30',
         ];
     }
 }
