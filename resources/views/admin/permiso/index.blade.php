@@ -4,7 +4,11 @@
 @endsection
 
 @section('titulocontenido')
-    Modulo Tipo de Usuario
+    Modulo Permiso
+@endsection
+
+@section("scripts")
+<script src="{{asset("assets/pages/scripts/admin/index.js")}}" type="text/javascript"></script>
 @endsection
 
 @section('contenido')
@@ -31,6 +35,19 @@
                             <tr>
                                 <td>{{$permiso->id}}</td>
                                 <td>{{$permiso->responsabilidad}}</td>
+                                <td class="text-right py-0 align-middle">
+                                    <div class="btn-group btn-group-sm">
+                                                <a href="{{route("editar_permiso", ['id' => $permiso->id])}}" class="btn btn-info" title="Editar este registro">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <form action="{{route("eliminar_permiso", ['id' => $permiso->id])}}" class="form-eliminar btn btn-danger" method="POST">
+                                                    @csrf @method("delete")
+                                                    <button type="submit" class="btn-accion-tabla eliminar tooltipsC" title="Eliminar este registro">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -11,9 +11,6 @@
           <li class="nav-item">
             <a href="/" class="nav-link">INICIO</a>
           </li>
-          <li class="nav-item">
-            <a href="{{url('noticias')}}" class="nav-link">NOTICIAS</a>
-          </li>
           </ul>
 
          </div>
@@ -28,7 +25,7 @@
                    Inicio Sección 
                 </button>
               </a>
-              <a href="{{route('login')}}">
+              <a href="{{route('register')}}">
                 <button type="button" class="btn btn-danger btn-sm">
                   Registrar Usuario
                 </button>

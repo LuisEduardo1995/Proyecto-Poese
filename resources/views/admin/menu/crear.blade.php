@@ -13,14 +13,14 @@
 
 @section('contenido')
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-md-12">
         @include('includes.form-error')
         @include('includes.mensaje')
             <div class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Crear Menús</h3>
                   <a href="{{route('menu')}}" class="btn btn-success btn-sm float-right">
-                    <i class="fa fa-fw fa-reply-all"></i> Nuevo registro
+                    <i class="fa fa-fw fa-reply-all"></i> Volver al Listado
                 </a>
                 </div>
 

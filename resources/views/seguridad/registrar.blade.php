@@ -26,9 +26,9 @@
 
                       <!-- /.login-logo -->
                       <div class="card">
-                        <div class="card-body login-card-body">
+                        <div class="card-body register-card-body">
                           <p class="login-box-msg">INGRESA LOS DATOS</p>
-
+                          
                                @if($errors->any())
                                 <div class="card bg-danger alert alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -41,10 +41,42 @@
                                   </div>
                                   @endif
 
-                                <form action="{{route('login_post')}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off">
+                                <form action="{{route('register_post')}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off">
                                 @csrf
+                                <div class="input-group mb-3">
+                                  <input type="text" name="cedula" class="form-control" value="{{old('cedula')}}"  placeholder="Cedula">
+                                  <div class="input-group-append">
+                                    <div class="input-group-text">
+                                      <span class="fas fa-user"></span>
+                                    </div>
+                                  </div>
+                                </div>
+                            <div class="input-group mb-3 {{ $errors->has('cedula') ? 'has:error' : ''}}">
+                              <input type="text" name="nombre" class="form-control" value="{{old('nombre')}}" placeholder="Nombre">
+                              <div class="input-group-append">
+                                <div class="input-group-text">
+                                  <span class="fas fa-male"></span>
+                                </div>
+                              </div>
+                            </div>
                             <div class="input-group mb-3">
-                              <input type="text" name="usuario" class="form-control" value="{{old('usuario')}}" placeholder="Usuario">
+                              <input type="text" name="apellido" class="form-control" value="{{old('apellido')}}" placeholder="Apellido">
+                              <div class="input-group-append">
+                                <div class="input-group-text">
+                                  <span class="fas fa-user"></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="input-group mb-3">
+                              <input type="text" name="telefono" class="form-control" value="{{old('telefono')}}" placeholder="Telefono">
+                              <div class="input-group-append">
+                                <div class="input-group-text">
+                                  <span class="fas fa-user"></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="input-group mb-3">
+                              <input type="email" name="email" class="form-control" value="{{old('email')}}" placeholder="Correo">
                               <div class="input-group-append">
                                 <div class="input-group-text">
                                   <span class="fas fa-envelope"></span>
@@ -52,7 +84,23 @@
                               </div>
                             </div>
                             <div class="input-group mb-3">
-                              <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                              <input type="text" name="usuario" class="form-control" value="{{old('usuario')}}" placeholder="Usuario">
+                              <div class="input-group-append">
+                                <div class="input-group-text">
+                                  <span class="fas fa-user"></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="input-group mb-3">
+                              <input type="password" name="password" class="form-control" value="{{old('password')}}" placeholder="Contraseña">
+                              <div class="input-group-append">
+                                <div class="input-group-text">
+                                  <span class="fas fa-lock"></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="input-group mb-3">
+                              <input type="password" name="password_confirmation" class="form-control" placeholder="Repetir Contraseña">
                               <div class="input-group-append">
                                 <div class="input-group-text">
                                   <span class="fas fa-lock"></span>
@@ -70,7 +118,7 @@
                               </div>
                               <!-- /.col -->
                               <div class="col-4">
-                                <button type="submit" class="btn btn-success btn-sm-block">INGRESAR</button>
+                                <button type="submit" class="btn btn-success btn-sm-block">Rgistrar</button>
                               </div>
                               <!-- /.col -->
                             </div>

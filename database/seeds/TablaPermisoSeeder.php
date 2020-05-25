@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Permiso;
+use App\models\seguridad\Usuario;
 use Illuminate\Database\Seeder;
 
 class TablaPermisoSeeder extends Seeder
@@ -12,6 +12,8 @@ class TablaPermisoSeeder extends Seeder
      */
     public function run()
     {
-        factory(Permiso::class)->times(50)->create();
+        factory(Usuario::class, 50)->create()->each(function ($usuario) {
+            $usuario->posts()->save(factory(App\models\seguridad\Usuario::class)->make());
+        });
     }
 }

@@ -1,7 +1,6 @@
 label.required:after{
     content: "*";
-    color: brown;
-
+    color: #f11010;
 }
 .btn-accion-tabla {
     cursor: pointer;

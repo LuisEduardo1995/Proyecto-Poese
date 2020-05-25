@@ -8,7 +8,7 @@
       <div class="col-md-11">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title"> Relaciones Politicas </h3>
+            <h3 class="card-title"> Actividades Realizadas </h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -17,16 +17,24 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="No hay foto">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="{{asset("assets/imagenes/2.png")}}" alt="Second slide">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/2.png")}}" alt="No hay foto">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="{{asset("assets/imagenes/3.png")}}" alt="Third slide">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/3.png")}}" alt="No hay foto">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/4.png")}}" alt="No hay foto">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset("assets/imagenes/5.png")}}" alt="No hay foto">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -50,27 +58,18 @@
               <div class="card-header">
                 <h4 class="card-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    COMANDANTE ETERNO HUGO CHAVEZ
+                    COMANDANTE ETERNO HUGO CHAVEZ, 2006
                   </a>
                 </h4>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in">
                 <table><tr><td class="col-md-6"> <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                  laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                  nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                  labore sustainable VHS.
+                "Al imperio no hay que subestimarlo, pero tampoco hay que temerle. Quien pretenda llevar adelante un proyecto de transformación, inevitablemente chocará con el imperio norteamericano"
+
                 </div></td>
                 <td class="col-md-6">
                   <div>
-                    <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                    <img class="d-block w-100" src="{{asset("assets/imagenes/hugo.gif")}}" alt="First slide">
                   </div>
                 </td>
               </tr>
@@ -87,21 +86,11 @@
               </div>
               <div id="collapseTwo" class="panel-collapse collapse">
                 <table><tr><td class="col-md-6"> <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  3
-                  wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                  laborum
-                  eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                  nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                  nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                  labore sustainable VHS.
+                  "Mejorar todo para mejorar la patria. Combatir la corrupción, el burocratismo, el minimalismo. Demos el ejemplo de aires de renovación, de buenos aires de renovación a nuestro pueblo"
                 </div></td>
                 <td class="col-md-6">
                   <div>
-                    <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                    <img class="d-block w-100" src="{{asset("assets/imagenes/maduro.jpg")}}" alt="First slide">
                   </div>
                 </td>
               </tr>
@@ -132,7 +121,7 @@
                 </div></td>
                 <td class="col-md-6">
                   <div>
-                    <img class="d-block w-100" src="{{asset("assets/imagenes/1.png")}}" alt="First slide">
+                    <img class="d-block w-100" src="{{asset("assets/imagenes/dennys.jpg")}}" alt="First slide">
                   </div>
                 </td>
               </tr>
@@ -158,21 +147,21 @@
           <!-- /.card-header -->
           <div class="card-body">
             <ul class="list-unstyled">
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Consectetur adipiscing elit</li>
-              <li>Integer molestie lorem at massa</li>
-              <li>Facilisis in pretium nisl aliquet</li>
-              <li>Nulla volutpat aliquam velit
+              <li> </li>
+              <li> </li>
+              <li> </li>
+              <li> </li>
+              <li> 
                 <ul>
-                  <li>Phasellus iaculis neque</li>
-                  <li>Purus sodales ultricies</li>
-                  <li>Vestibulum laoreet porttitor sem</li>
-                  <li>Ac tristique libero volutpat at</li>
+                  <li> </li>
+                  <li> </li>
+                  <li> </li>
+                  <li> </li>
                 </ul>
               </li>
-              <li>Faucibus porta lacus fringilla vel</li>
-              <li>Aenean sit amet erat nunc</li>
-              <li>Eget porttitor lorem</li>
+              <li> </li>
+              <li> </li>
+              <li> </li>
             </ul>
           </div>
           <!-- /.card-body -->
@@ -187,36 +176,8 @@
         <div class="card-body p-0">
           <ul class="users-list clearfix">
             <li>
-              <img src="{{asset("assets/imagenes/luis.jpg")}}" alt="User Image">
-              <a class="users-list-name"> Luis SantaFé </a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">Norman</a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">Jane</a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">John</a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">Alexander</a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">Sarah</a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">Nora</a>
-            </li>
-            <li>
-              <img src="{{asset("assets/imagenes/1.png")}}" alt="User Image">
-              <a class="users-list-name">Nadia</a>
+              <img src="{{asset("assets/imagenes/")}}" alt="Imagen de usuario">
+              <a class="users-list-name"> </a>
             </li>
           </ul>
         </div>

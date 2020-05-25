@@ -19,7 +19,7 @@ class MenuRolController extends Controller
         $rols = Rol::orderBy('id')->pluck('tipo_usuario', 'id')->toArray();
         $menus = Menu::getMenu();
         $menusRols = Menu::with('roles')->get()->pluck('roles', 'id')->toArray();
-        return view('admin.menu-rol.index', compact('rols', 'menus', 'menusRols'));
+        return view('admin.menu-rol.index',compact('rols', 'menus', 'menusRols'));
 
     }
 

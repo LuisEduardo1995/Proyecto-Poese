@@ -1,2 +1,1 @@
-<button type="reset" class="btn btn-default float-right">Cancel</button>
-<button type="submit" class="btn btn-success">Actualizar</button>
+<button type="submit" class="btn btn-success float-right">Actualizar</button>

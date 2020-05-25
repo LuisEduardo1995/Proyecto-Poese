@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="_token" content="jiSrP9zvKU7sXDIl1BPSlpSOZbj7Ifup9JAHGz5O">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <!--<meta name="description" content="bootstrap material admin template">-->
+    <meta name="author" content="Tsu. Informatica Luis Santafe">
+
+    <title>SETEAR COORDENADAS</title>
+
+
+    <!-- Stylesheets -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/>
+	
+	
+	<style>
+	#mapa{
+		width:100%;
+		height:100vh;
+		top: 0 !important;
+		position: absolute !important;
+		z-index: 9990 !important;
+		/*border: dashed 1px #666666;*/
+	}
+	
+	#botonera{
+		position: relative;
+		text-align:center !important;
+		/*margin-left: 10px;*/
+		margin-top: 90vh;
+		z-index: 9991 !important
+	}
+	
+	.iframeMap{
+		width:100%;
+		height:100vh;
+	}
+
+</style>
+
+
+
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Page -->
+    <div id="mapa"></div>
+    <div id="crd"></div>
+    <div id="botonera">
+        <button type='button' id="add" class="btn btn-info fa fa-check" title="Agregar Ubicación"></button>
+        <!--<button type='button' id="el" class="btn btn-danger icon md-close" title="Eliminar Ubicación"></button>-->
+    </div>
+    <div id="nav"></div>
+
+    <!--<div id='bsqGeo'>
+        <input type='text' id='geocoder'>
+        <button type='button' id="srcGeo" class="btn btn-success icon md-search" onClick='codeAddress()' autofocus title="Buscar"></button>
+    </div>-->
+
+    <input type="hidden" id="id" value="coordenadas">
+    <input type="hidden" id="modal" value="modalMapa">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+    <!--<script src="https://leaflet.github.io/Leaflet.draw/docs/examples/libs/leaflet-src.js"></script>-->
+    <script src="http://leaflet.github.io/Leaflet.draw/src/Leaflet.draw.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/Leaflet.Draw.Event.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/Toolbar.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/Tooltip.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/ext/GeometryUtil.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/ext/LatLngUtil.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/ext/LineUtil.Intersect.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/ext/Polygon.Intersect.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/ext/Polyline.Intersect.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/ext/TouchEvents.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/DrawToolbar.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Feature.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.SimpleShape.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Polyline.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Marker.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Circle.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.CircleMarker.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Polygon.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Rectangle.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/EditToolbar.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/EditToolbar.Edit.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/EditToolbar.Delete.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/Control.Draw.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Poly.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.SimpleShape.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Rectangle.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Marker.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.CircleMarker.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Circle.js"></script>
+    <script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
+    <!--<script src="lib/leaflet/Google.js"></script>-->
+
+    <script>
+	  L.mapbox.accessToken = 'pk.eyJ1IjoiamFnczA0IiwiYSI6ImNqbXYzaHZ6eTAydTczdm5rZzdwdGQ4eHQifQ.xEd9mG0dIP402sxM2iJkEg';
+
+
+		var control = 0, lonLat = '', points = '', geojson = '', puncte1='' ;
+
+
+		var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib}),
+			map = L.mapbox.map('mapa').setView([8.120019,-65.960536], 6);
+		//, 'mapbox.streets-satellite'
+		var layers = {
+			Streets: L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'),
+			Light: L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'),
+			Satellite: L.mapbox.styleLayer('mapbox://styles/mapbox/satellite-streets-v9')
+		};
+
+		layers.Streets.addTo(map);
+		L.control.layers(layers).addTo(map);
+
+
+		var drawnItems = new L.FeatureGroup();
+		map.addLayer(drawnItems);
+		map.attributionControl.addAttribution('Elaborado por <a href="mailto:santafealcala@gmail.com">Tsu. Inf. Luis Santafe</a>');
+
+		map.addControl(L.mapbox.geocoderControl('mapbox.places', {
+			autocomplete: true
+		}));
+
+		// Set the title to show on the polygon button
+		L.drawLocal.draw.toolbar.buttons.marker = 'Seleccione para ubicar una marca en el mapa';
+
+		var drawControl = new L.Control.Draw({
+			position: 'topleft',
+			draw: {
+				rectangle: false,
+				circlemarker: false,
+				polyline: false,
+				polygon: false, // false
+				circle: false,
+				marker: true
+			},
+			edit: {
+				featureGroup: drawnItems,
+				remove: true
+			}
+		});
+		map.addControl(drawControl);
+
+
+
+		// Truncate value based on number of decimals
+		var _round = function(num, len) {
+			return Math.round(num*(Math.pow(10, len)))/(Math.pow(10, len));
+		};
+		// Helper method to format LatLng object (x.xxxxxx, y.yyyyyy)
+		var strLatLng = function(latlng, t) {
+			if(t = 0){
+				return "("+_round(latlng.lat, 6)+", "+_round(latlng.lng, 6)+")";
+			}
+			else{
+				return _round(latlng.lng, 6)+","+_round(latlng.lat, 6);
+			}
+
+		};
+
+		// Generate popup content based on layer type
+		// - Returns HTML string, or null if unknown object
+		var getPopupContent = function(layer) {
+			// Marker - add lat/long
+			if (layer instanceof L.Marker || layer instanceof L.CircleMarker) {
+				return strLatLng(layer.getLatLng());
+				// Circle - lat/long, radius
+			} else if (layer instanceof L.Circle) {
+				var center = layer.getLatLng(),
+					radius = layer.getRadius();
+				return "Center: "+strLatLng(center)+"<br />"
+					+"Radius: "+_round(radius, 2)+" m";
+				// Rectangle/Polygon - area
+			} else if (layer instanceof L.Polygon) {
+				var latlngs = layer._defaultShape ? layer._defaultShape() : layer.getLatLngs(),
+					area = L.GeometryUtil.geodesicArea(latlngs);
+				return "Area: "+L.GeometryUtil.readableArea(area, true);
+				// Polyline - distance
+			} else if (layer instanceof L.Polyline) {
+				var latlngs = layer._defaultShape ? layer._defaultShape() : layer.getLatLngs(),
+					distance = 0;
+				if (latlngs.length < 2) {
+					return "Distance: N/A";
+				} else {
+					for (var i = 0; i < latlngs.length-1; i++) {
+						distance += latlngs[i].distanceTo(latlngs[i+1]);
+					}
+					return "Distance: "+_round(distance, 2)+" m";
+				}
+			}
+			return null;
+		};
+
+		// Object created - bind popup to layer, add to feature group
+		map.on(L.Draw.Event.CREATED, function(event) {
+			var layer = event.layer;
+			var content = getPopupContent(layer);
+			lonLat = strLatLng(layer.getLatLng(), 1);
+			if (content !== null) {
+				layer.bindPopup(content);
+			}
+			drawnItems.addLayer(layer);
+		});
+
+		// Object(s) edited - update popups
+		map.on(L.Draw.Event.EDITED, function(event) {
+			var layers = event.layers,
+				content = null;
+			layers.eachLayer(function(layer) {
+				content = getPopupContent(layer);
+				lonLat = strLatLng(layer.getLatLng(), 1);
+				if (content !== null) {
+					layer.setPopupContent(content);
+				}
+			});
+		});
+
+		// deletred markers event
+		map.on('draw:deleted', function (e) {
+		   lonLat = '';
+		});
+
+		$(function () {
+
+			$('#add').click(function(){
+				if(lonLat == '' ){
+					alert('Debe setear la coordenada de algun lugar!!!')
+				}
+				else{
+					parent.$("#"+$('#id').val()).val(lonLat);
+					lonLat = '';
+					parent.$('#'+$('#modal').val()).modal('hide');
+				}
+			})
+		})
+	</script>
+</body>
+</html>

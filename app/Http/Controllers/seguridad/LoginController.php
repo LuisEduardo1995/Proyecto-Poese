@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
-    protected $redirectTo = '/admin/menu';
+    protected $redirectTo = '/admin/usuario';
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        $roles = $user->roles()->where('estado', 1)->get();
+        $roles = $user->roles()->get();
         if ($roles->isNotEmpty()) {
             $user->setSession($roles->toArray());
         }else{

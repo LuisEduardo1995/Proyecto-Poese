@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="_token" content="jiSrP9zvKU7sXDIl1BPSlpSOZbj7Ifup9JAHGz5O">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <!--<meta name="description" content="bootstrap material admin template">-->
+    <meta name="author" content="Tsu. Informatica Luis Santafe">
+
+    <title>SETEAR COORDENADAS</title>
+
+
+    <!-- Stylesheets -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/>
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	
+	
+	<style>
+	#mapa{
+		width:100%;
+		height:100vh;
+		top: 0 !important;
+		position: absolute !important;
+		z-index: 9990 !important;
+		/*border: dashed 1px #666666;*/
+	}
+	
+	#botonera{
+		position: relative;
+		text-align:center !important;
+		/*margin-left: 10px;*/
+		margin-top: 90vh;
+		z-index: 9991 !important
+	}
+	
+	.iframeMap{
+		width:100%;
+		height:100vh;
+	}
+
+</style>
+
+
+
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Page -->
+    <div id="mapa"></div>
+    <div id="crd"></div>
+    <div id="botonera">
+        <button type='button' id="add" class="btn btn-info fa fa-check" title="Agregar Ubicación"></button>
+        <!--<button type='button' id="el" class="btn btn-danger icon md-close" title="Eliminar Ubicación"></button>-->
+    </div>
+    <div id="nav"></div>
+
+    <!--<div id='bsqGeo'>
+        <input type='text' id='geocoder'>
+        <button type='button' id="srcGeo" class="btn btn-success icon md-search" onClick='codeAddress()' autofocus title="Buscar"></button>
+    </div>-->
+
+    <input type="hidden" id="id" value="coordenadas">
+    <input type="hidden" id="modal" value="modalMapa">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+    <!--<script src="https://leaflet.github.io/Leaflet.draw/docs/examples/libs/leaflet-src.js"></script>-->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <!--<script src="lib/leaflet/Google.js"></script>-->
+
+    <script>
+	
+	L.mapbox.accessToken = 'pk.eyJ1IjoiamFnczA0IiwiYSI6ImNqbXYzaHZ6eTAydTczdm5rZzdwdGQ4eHQifQ.xEd9mG0dIP402sxM2iJkEg';
+    var map = L.mapbox.map('mapa').setView([8.120019,-65.960536], 6);//, 'mapbox.streets-satellite'
+    L.control.fullscreen().addTo(map);
+
+    var layers = {
+        Streets: L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'),
+        Light: L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'),
+        Satellite: L.mapbox.styleLayer('mapbox://styles/mapbox/satellite-streets-v9')
+    };
+
+    layers.Streets.addTo(map);
+    L.control.layers(layers).addTo(map);
+
+    map.attributionControl.addAttribution('Elaborado por <a href="mailto:santafealcala@gmail.com">Tsu. Inf. Luis Santafe</a>)');
+    //leyendaStr = $('#leyenda').html();
+
+// omnivore will AJAX-request this file behind the scenes and parse it:
+// note that there are considerations:
+// - The file must either be on the same domain as the page that requests it,
+//   or both the server it is requested from and the user's browser must
+//   support CORS.
+
+// Internally this uses the toGeoJSON library to decode the KML file
+// into GeoJSON
+
+   
+	 omnivore.kml('kml.php')
+        .on('ready', function(runLayer) {
+        this.eachLayer(function(layer) {
+            //console.log(layer); //to inspect what properties are available
+            /*layer.bindTooltip(layer.feature.properties.description, {
+                permanent: true
+            });*/
+            layer.bindPopup(layer.feature.properties.description);
+        });
+    }).addTo(map);
+
+   
+
+	</script>
+</body>
+</html>

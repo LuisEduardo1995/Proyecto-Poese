@@ -19,7 +19,7 @@
                 <div class="card-header">
                   <h3 class="card-title">Menú Rol</h3>
                 </div>
-               
+                    @csrf
                     <table class="table table-striped table-bordered table-hover" id="tabla-data">
                         <thead>
                             <tr>

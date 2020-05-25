@@ -28,8 +28,7 @@
                 <div class="card-header">
                   <h3 class="card-title">Menú</h3>
                   <a href="{{route('crear_menu')}}" class="btn btn-success btn-sm float-right">
-                    <i class="fa fa-fw fa-plus-circle"></i> Nuevo registro
-                </a>
+                    <i class="fa fa-fw fa-plus-circle"></i> Nuevo registro</a>
                 </div>
                 @csrf
                 <div class="dd" id="nestable">

@@ -4,14 +4,14 @@ namespace App\models\seguridad;
 
 use App\Models\Admin\Rol;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class Usuario extends Authenticatable
 {
     protected $remenber_token = false;
     protected $table = 'usuario';
-    protected $fillable = ['cedula', 'nombre', 'apellido', 'telefono', 'correo', 'usuario', 'password'];
-    protected $guarded = ['id'];
+    protected $fillable = ['cedula', 'nombre', 'apellido', 'telefono', 'email', 'usuario', 'password'];
 
     public function roles()
     {
@@ -33,6 +33,9 @@ class Usuario extends Authenticatable
         }
     }
     
-
+    public function setPasswordAttribute($pass)
+    {
+        $this->attributes['password'] = Hash::make($pass);
+    }
     
 }

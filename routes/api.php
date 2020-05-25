@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('usuario', function(){
+    
+    return datatables()->eloquent(App\models\seguridad\Usuario::query())
+    ->addColumn('btn', 'includes/boton-datatable')
+    ->rawColumns(['btn'])
+    ->toJson();
+
 });

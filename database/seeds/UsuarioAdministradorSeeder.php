@@ -17,7 +17,7 @@ class UsuarioAdministradorSeeder extends Seeder
             'nombre' => 'Luis',
             'apellido' => 'Santafe',
             'telefono' => '04241919558',
-            'correo' => 'santafealcala@gmail.com',
+            'email' => 'santafealcala@gmail.com',
             'usuario' => 'Eduardo Alcala',
             'password' => bcrypt('123pass')
         ]);
@@ -31,13 +31,13 @@ class UsuarioAdministradorSeeder extends Seeder
             'nombre' => 'Yanida',
             'apellido' => 'De  Santafe',
             'telefono' => '04141273244',
-            'correo' => 'santafe@gmail.com',
+            'email' => 'santafe@gmail.com',
             'usuario' => 'Yanida Alcala',
             'password' => bcrypt('123pass')
         ]);
         
         DB::table('rol')->insert([
-            'tipo_usuario' => 'Usuaria'
+            'tipo_usuario' => 'Usuario'
         ]);
 
         DB::table('usuario_rol')->insert([
